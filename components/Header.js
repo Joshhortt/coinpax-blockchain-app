@@ -2,16 +2,22 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Header = () => {
-    return <Button style={{ backgroundColor: '#3773f5', color: '#000' }}>
+    return (
+    <Wrapper>
+    <Button style={{ backgroundColor: '#3773f5', color: '#000' }}>
     Comprar / Vender
-  </Button>
+    </Button>
+        <Button>
+        Enviar / Receber
+        </Button>
+  </Wrapper>
+    )
 }
 
 export default Header
 
 const Wrapper = styled.div`
   width: calc(100%);
-  /* TRouBLe */
   padding: 1rem 1.5rem;
   border-bottom: 1px solid #282b2f;
   display: flex;
