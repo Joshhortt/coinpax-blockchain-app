@@ -9,9 +9,13 @@ export default function Home() {
  // add button
     const { address, connectWallet } = useWeb3()
     return (
-      <Wrapper><button onClick={() => connectWallet('injected')}>
+      <Wrapper>
+        <WalletConnect>
+        <button onClick={() => connectWallet('injected')}>
       Connect Wallet
-    </button></Wrapper>
+        </button>
+      </WalletConnect>
+    </Wrapper>
     )
   }
 
@@ -25,4 +29,11 @@ export default function Home() {
   color: white;
   display: grid;
   place-items: center;
+`
+
+const WalletConnect = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
