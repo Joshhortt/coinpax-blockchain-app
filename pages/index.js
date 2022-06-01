@@ -16,11 +16,11 @@ export default function Home() {
       ) : (
         <WalletConnect>
         <Button onClick={() => connectWallet('injected')}>
-      Connect Wallet
+      Conectar Carteira
         </Button>
           <Details>
-            You need Google Chrome Browser to be
-            <br /> able to run this application.
+          Você precisa do navegador Google Chrome
+          <br /> para poder executar este aplicativo
           </Details>
       </WalletConnect>
        )}
