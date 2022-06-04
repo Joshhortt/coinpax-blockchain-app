@@ -15,10 +15,10 @@ const Portfolio = () => {
           <Table>
             <TableItem>
               <TableRow>
-                <div style={{ flex: 3 }}>Name</div>
-                <div style={{ flex: 2 }}>Balance</div>
-                <div style={{ flex: 1 }}>Price</div>
-                <div style={{ flex: 1 }}>Allocation</div>
+                <div style={{ flex: 3 }}>Nome</div>
+                <div style={{ flex: 2 }}>Saldo</div>
+                <div style={{ flex: 1 }}>Preço</div>
+                <div style={{ flex: 1 }}>Alocação</div>
                 <div style={{ flex: 0 }}>
                     <BsThreeDotsVertical />
                 </div>
