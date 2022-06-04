@@ -37,3 +37,11 @@ const CoinIcon = styled.div`
   margin-right: 1rem;
 `
 
+const Primary = styled.div`
+  margin-bottom: 0.1rem;
+`
+
+const Secondary = styled.div`
+  color: #8a919e;
+  font-size: 0.8rem;
+`
