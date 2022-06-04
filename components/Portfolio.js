@@ -24,9 +24,13 @@ const Portfolio = () => {
               </TableRow>
             </TableItem>
             <Divider />
-             <div>
-                {coins.map}
-             </div>
+            <div>
+              {coins.map(coin => (
+                <div><h3>{coin.name}</h3>
+                  <Divider />
+                </div>
+              ))}
+            </div>
           </Table>
         </PortfolioTable>
      </Wrapper>
