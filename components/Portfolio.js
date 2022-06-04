@@ -1,13 +1,32 @@
 import React from 'react'
 import styled from 'styled-components'
+import {BsThreeDotsVertical} from 'react-icons/bs'
 
 const Portfolio = () => {
   return (
-    <PortfolioTable>
-        <TableItem>
-        <Title>Os teus Ativos</Title>
-        </TableItem>
-    </PortfolioTable>
+      <Wrapper>
+        <PortfolioTable>
+            <TableItem>
+            <Title>Os teus Ativos</Title>
+            </TableItem>
+            <Divider />
+          <Table>
+            <TableItem>
+              <TableRow>
+                <div>Name</div>
+                <div>Balance</div>
+                <div>Price</div>
+                <div>Allocation</div>
+                <div style={{ flex: 0, color: '#0a0b0d' }}>
+                  <BsThreeDotsVertical />
+                </div>
+              </TableRow>
+            </TableItem>
+            <Divider />
+          
+          </Table>
+        </PortfolioTable>
+     </Wrapper>
   )
 }
 
