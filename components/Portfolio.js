@@ -20,3 +20,25 @@ const Content = styled.div`
   max-width: 1000px;
   padding: 2rem 1rem;
 `
+
+const PortfolioTable = styled.div`
+  margin-top: 1rem;
+  border: 1px solid #282b2f;
+`
+
+const Table = styled.div`
+  width: 100%;
+`
+
+const TableRow = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  & > th {
+    text-align: left;
+  }
+`
+
+const TableItem = styled.div`
+  padding: 1rem 2rem;
+`
