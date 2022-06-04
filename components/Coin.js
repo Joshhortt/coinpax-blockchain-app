@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  
+
   & > div {
     width: 100%;
     display: flex;
@@ -25,3 +25,15 @@ const Wrapper = styled.div`
     padding: 1rem 2rem;
   }
 `
+
+
+const NameCol = styled.div`
+  display: flex;
+  align-items: center;
+`
+
+const CoinIcon = styled.div`
+  width: 1.8rem;
+  margin-right: 1rem;
+`
+
