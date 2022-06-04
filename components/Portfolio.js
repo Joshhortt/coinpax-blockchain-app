@@ -7,6 +7,7 @@ import Coin from './Coin'
 const Portfolio = () => {
   return (
       <Wrapper>
+          <Content>
         <PortfolioTable>
             <TableItem>
             <Title>Os teus Ativos</Title>
@@ -35,6 +36,7 @@ const Portfolio = () => {
             </div>
           </Table>
         </PortfolioTable>
+        </Content>
      </Wrapper>
   )
 }
@@ -81,6 +83,6 @@ const Divider = styled.div`
 `
 
 const Title = styled.div`
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 600;
 `
