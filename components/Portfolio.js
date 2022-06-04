@@ -2,7 +2,11 @@ import React from 'react'
 
 const Portfolio = () => {
   return (
-    <div>Portfolio</div>
+    <PortfolioTable>
+        <TableItem>
+        <Title>Os teus Ativos</Title>
+        </TableItem>
+    </PortfolioTable>
   )
 }
 
