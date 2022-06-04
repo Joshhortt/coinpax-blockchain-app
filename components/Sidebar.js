@@ -18,6 +18,9 @@ const Sidebar = () => {
             <NavIcon>
             {item.icon}
             </NavIcon>
+            <NavTitle>
+                {item.title}
+                </NavTitle>
           </NavItem>
         ))}
       </NavItemsContainer>
@@ -53,11 +56,11 @@ const NavItemsContainer = styled.div`
 const NavItem = styled.div`
   display: flex;
   align-items: center;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 500;
   border-radius: 0.5rem;
-  margin-bottom: 1.5rem;
-  height: 4rem;
+  margin-bottom: 1.5rem; 
+  height: 3rem;
   &:hover {
     background-color: #141519;
   }
@@ -71,3 +74,5 @@ const NavIcon = styled.div`
   display: grid;
   place-items: center;
 `
+
+const NavTitle = styled.div``
