@@ -42,3 +42,7 @@ const TableRow = styled.div`
 const TableItem = styled.div`
   padding: 1rem 2rem;
 `
+
+const Divider = styled.div`
+  border-bottom: 1px solid #282b2f;
+`
