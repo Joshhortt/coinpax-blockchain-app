@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import CoinbaseLogo from '../assets/cb-logo.png'
+import CoinbaseLogo from '../assets/cp-logo.png'
+import Image from 'next/image'
 
 const Sidebar = () => {
   return (

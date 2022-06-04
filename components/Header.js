@@ -38,11 +38,12 @@ const ButtonsContainer = styled.div`
 
 const Button = styled.div`
   border: 1px solid #282b2f;
-  padding: 0.8rem;
-  font-size: 1.3rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
   font-weight: 500;
   border-radius: 0.4rem;
   margin-right: 1rem;
+  margin-left: 1rem;
   &:hover {
     cursor: pointer;
   }
