@@ -5,7 +5,9 @@ import Chart from 'chart.js/auto'
 
 const BalanceChart = () => {
   return (
-    <div>BalanceChart</div>
+    <Wrapper>
+      <Line data={data} options={options} width={400} height={150} />
+    </Wrapper>
   )
 }
 

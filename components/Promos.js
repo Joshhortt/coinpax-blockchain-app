@@ -7,7 +7,7 @@ const Promos = () => {
   
     <OfferCard>
       <Title>Rendimento do ganho</Title>
-      <Description>Ganhe CO 2,84% APY em sua criptomoeda</Description>
+      <Description>Ganhe até 2,84% APY em sua criptomoeda</Description>
       <Placeholder />
       <Additional style={{ fontSize: '1.5rem' }}>
         $0.000066 <span>2.84% APY</span>
@@ -16,7 +16,7 @@ const Promos = () => {
   
     <OfferCard>
         <Title>Aprenda & Ganhe</Title>
-        <Description>Ganhe CO 2,84% APY em sua criptomoeda</Description>
+        <Description>Ganhe até 2,84% APY em sua criptomoeda</Description>
         <Placeholder />
         <Additional style={{ color: '#3773f5' }}>Verifque Identidade</Additional>
       </OfferCard>
