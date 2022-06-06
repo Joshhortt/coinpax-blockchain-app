@@ -41,6 +41,14 @@ const data = {
       ],
 }
 
+const options = {
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
+  }
+
 const BalanceChart = () => {
   return (
     <Wrapper>
