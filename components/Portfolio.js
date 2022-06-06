@@ -9,7 +9,18 @@ const Portfolio = () => {
   return (
       <Wrapper>
           <Content>
-          <BalanceChart />
+          <Chart>
+              <div>
+                <Balance>
+                  <BalanceTitle>Saldo da carteira</BalanceTitle>
+                  <BalanceValue>
+                    {'$'}
+                    10,000
+                  </BalanceValue>
+                </Balance>
+              </div>
+           <BalanceChart />
+          </Chart>
         <PortfolioTable>
             <TableItem>
             <Title>Os teus Ativos</Title>
