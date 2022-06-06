@@ -3,7 +3,24 @@ import styled from 'styled-components'
 
 const Promos = () => {
   return (
-    <div>Promos</div>
+    <Wrapper>
+  
+    <OfferCard>
+      <Title>Rendimento do ganho</Title>
+      <Description>Ganhe CO 2,84% APY em sua criptomoeda</Description>
+      <Placeholder />
+      <Additional style={{ fontSize: '1.5rem' }}>
+        $0.000066 <span>2.84% APY</span>
+      </Additional>
+    </OfferCard>
+  
+    <OfferCard>
+        <Title>Aprenda & Ganhe</Title>
+        <Description>Ganhe CO 2,84% APY em sua criptomoeda</Description>
+        <Placeholder />
+        <Additional style={{ color: '#3773f5' }}>Verifque Identidade</Additional>
+      </OfferCard>
+    </Wrapper>
   )
 }
 
@@ -26,7 +43,7 @@ const OfferCard = styled.div`
 `
 
 const Title = styled.div`
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1.5rem;
   margin-bottom: 0.1rem;
 `
@@ -41,7 +58,7 @@ const Placeholder = styled.div`
 
 const Additional = styled.div`
   font-size: 1.1rem;
-  font-weight: 700;
+  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: space-between;
