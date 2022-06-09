@@ -29,12 +29,12 @@ export default createSchema({
         },
         {
           title: 'Contract Address',
-          name: 'contractaddress',
+          name: 'contractAddress',
           type: 'string',
         },
         {
           title: 'USD Price',
-          name: 'usdprice',
+          name: 'usdPrice',
           type: 'string',
         },
         {
