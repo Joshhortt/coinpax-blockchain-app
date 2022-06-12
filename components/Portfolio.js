@@ -8,14 +8,14 @@ import BalanceChart from './BalanceChart'
 import { ThirdwebSDK } from '@thirdweb-dev/sdk'
 import ethers from 'ethers'
 
-// const sdk = new ThirdwebSDK(
-//   new ethers.Wallet(
-//     process.env.NEXT_PUBLIC_METAMASK_KEY,
-//     ethers.getDefaultProvider(
-//       'https://rinkeby.infura.io/v3/'
-//     )
-//   )
-// )
+const sdk = new ThirdwebSDK(
+  new ethers.Wallet(
+    process.env.NEXT_PUBLIC_METAMASK_KEY,
+    ethers.getDefaultProvider(
+      'https://rinkeby.infura.io/v3/'
+    )
+  )
+)
 
 const Portfolio = () => {
     const [sanityTokens, setSanityTokens] = useState([]);
