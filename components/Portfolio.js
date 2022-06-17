@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import {BsThreeDotsVertical} from 'react-icons/bs'
 import { coins } from '../static/coins'
@@ -6,7 +6,23 @@ import Coin from './Coin'
 import BalanceChart from './BalanceChart'
 
 const Portfolio = ({ thirdWebTokens, sanityTokens, walletAddress }) => {
+  const [walletBalance, setWalletBalance] = useState(0)
+  const tokenUSD = {}
     
+  for ( const token of sanityTokens ) {
+    tokenUSD[token.contractAddress] = Number(token.usdPrice)
+  }
+
+  const calculateTokenBalance = async () =>  {
+    let total = 0
+    for (const token of thirdWebTokens) {
+      const balance = await token.balance(walletAddress)
+      total += Number(balance.displayValue) * tokenUSD[token.address]
+  }
+  setWalletBalance(total)
+ // return total
+}
+
   return (
       <Wrapper>
           <Content>
