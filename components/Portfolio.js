@@ -5,7 +5,7 @@ import { coins } from '../static/coins'
 import Coin from './Coin'
 import BalanceChart from './BalanceChart'
 
-const Portfolio = ({ thirdWebTokens, sanityTokens, walletAddress }) => {
+const Portfolio = ({ thirdWebTokens, sanityTokens }) => {
   const [walletBalance, setWalletBalance] = useState(0)
   const tokenToUSD = {}
     
@@ -14,17 +14,32 @@ const Portfolio = ({ thirdWebTokens, sanityTokens, walletAddress }) => {
   }
 
   useEffect(() => { 
-    const calculateTotalBalance = async () =>  {
-      let total = 0
-      for (const token of thirdWebTokens) {
-        const balance = await token.balance(walletAddress)
-        total += Number(balance.displayValue) * tokenToUSD[token.address]
-    }
-    console.log('Total balance:', total)
+    const calculateTotalBalance = async () => {
+      setWalletBalance(0)
 
-    setWalletBalance(total)
-  }
-  calculateTotalBalance()
+      sanityTokens.map(async token => {
+        const currentTwToken = thirdWebTokens.filter(
+          thirdWebTokens => thirdWebTokens.address === token.contractAddress,
+        )
+
+        const balance = await getBalance(currentTwToken[0])
+        setWalletBalance(prevState => prevState + balance * token.usdPrice)
+      })
+    }
+
+
+
+  //   const calculateTotalBalance = async () =>  {
+  //     let total = 0
+  //     for (const token of thirdWebTokens) {
+  //       const balance = await token.balance(walletAddress)
+  //       total += Number(balance.displayValue) * tokenToUSD[token.address]
+  //   }
+  //   console.log('Total balance:', total)
+
+  //   setWalletBalance(total)
+  // }
+  return calculateTotalBalance()
 
   }, [])
 
