@@ -1,7 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useRouter } from "next/router"
+//import ReactDOM from 'react-dom'
+//import Modal from 'react-modal'
+import TransferModal from './modal/TransferModal'
+import Link from 'next/link'
+
+Modal.setAppElement("#__next")
 
 const Header = ({walletAddress, connectWallet}) => {
+  const router = useRouter()
+
     return (
     <Wrapper>
         <Title>Ativos</Title>
