@@ -5,7 +5,7 @@ import { coins } from '../static/coins'
 import Coin from './Coin'
 import BalanceChart from './BalanceChart'
 
-const Portfolio = ({ thirdWebTokens, sanityTokens }) => {
+const Portfolio = ({ thirdWebTokens, sanityTokens, walletAddress }) => {
   const [walletBalance, setWalletBalance] = useState(0)
   const tokenToUSD = {}
     
@@ -15,34 +15,20 @@ const Portfolio = ({ thirdWebTokens, sanityTokens }) => {
 
   useEffect(() => { 
     const calculateTotalBalance = async () => {
-      setWalletBalance(0)
-
-      sanityTokens.map(async token => {
-        const currentTwToken = thirdWebTokens.filter(
-          thirdWebTokens => thirdWebTokens.address === token.contractAddress,
-        )
-
-        const balance = await getBalance(currentTwToken[0])
-        setWalletBalance(prevState => prevState + balance * token.usdPrice)
-      })
+      const totalBalance = await Promise.all(
+        thirdWebTokens.map(async token => {
+          const balance = await token.balanceOf(walletAddress)
+          return Number(balance.displayValue) * tokenToUSD[token.address]
+        })
+      )
+     
+      setWalletBalance(totalBalance.reduce((acc, curr) => acc + curr, 0))
     }
 
+    calculateTotalBalance()
 
-
-  //   const calculateTotalBalance = async () =>  {
-  //     let total = 0
-  //     for (const token of thirdWebTokens) {
-  //       const balance = await token.balance(walletAddress)
-  //       total += Number(balance.displayValue) * tokenToUSD[token.address]
-  //   }
-  //   console.log('Total balance:', total)
-
-  //   setWalletBalance(total)
-  // }
-  return calculateTotalBalance()
-
-  }, [])
-
+  }, [thirdWebTokens, sanityTokens,])
+ 
   return (
       <Wrapper>
           <Content>
@@ -52,7 +38,8 @@ const Portfolio = ({ thirdWebTokens, sanityTokens }) => {
                   <BalanceTitle>Saldo da carteira</BalanceTitle>
                   <BalanceValue>
                     {'$'}
-                    10,000
+                    {walletBalance.toLocaleString()}
+                    {/* 10,000 */}
                   </BalanceValue>
                 </Balance>
               </div>
