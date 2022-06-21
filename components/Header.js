@@ -29,10 +29,21 @@ const Header = ({walletAddress, connectWallet}) => {
     <Button style={{ backgroundColor: '#3773f5', color: '#000' }}>
     Comprar / Vender
     </Button>
-        <Button>
-        Enviar / Receber
-        </Button>
+        <Link href={"/?transfer=1"}>
+          <Button>Enviar / Receber</Button>
+        </Link>
         </ButtonsContainer>
+        
+      <Modal
+        isOpen={!!router.query.transfer}
+        onRequestClose={() => router.push("/")}
+      >
+        <TransferModal
+          thirdWebTokens={thirdWebTokens}
+          sanityTokens={sanityTokens}
+          walletAddress={walletAddress}
+        />
+      </Modal>
   </Wrapper>
     )
 }
